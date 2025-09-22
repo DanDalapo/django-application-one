@@ -1,3 +1,9 @@
 from django.shortcuts import render
+import random
 
-# Create your views here.
+def flip_coin(request):
+    result = random.choice(['HEADS', 'TAILS'])
+    context = {
+        'result': result
+    }
+    return render(request, 'coin_flipper/index.html', context)
